@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
 
 
 class Post(models.Model):
@@ -20,3 +21,18 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    fields= ('name','description')
+
+class CategoryInLine(admin.TabularInline):
+    model = Category.posts.through
+
+
+class PostAdmin(admin.ModelAdmin):
+    list_display= ('title','text','author', 'created_date',  'published_date')
+    list_per_page = 25
+    inlines = [
+        CategoryInLine
+    ]
