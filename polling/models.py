@@ -9,5 +9,5 @@ class Poll(models.Model):
     def __str__(self):
         return self.title
     
-class PollAdmin(admin.ModelAdmin):
-    fields= ('title','score')
+# class PollAdmin(admin.ModelAdmin):
+#     fields= ('title','score')
