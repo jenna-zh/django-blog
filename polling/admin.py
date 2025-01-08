@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blogging.models import Post,Category, PostAdmin,CategoryAdmin
+from blogging.models import Post, Category, PostAdmin, CategoryAdmin
 from polling.models import Poll
 
 
