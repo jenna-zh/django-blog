@@ -36,3 +36,4 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ("title", "text", "author", "created_date", "published_date")
     list_per_page = 25
     inlines = [CategoryInLine]
+
