@@ -1,4 +1,6 @@
 {% load static %}
+
+
 <!DOCTYPE html>
 <html>
   <title>My Django Blog</title>
@@ -16,6 +18,7 @@
           <li><a href="{% url 'account_logout' %}">logout</a></li>
          {% else %}
           <li><a href="{% url 'account_login' %}">login</a></li>
+          
         {% endif %}
       </ul>
     </div>
