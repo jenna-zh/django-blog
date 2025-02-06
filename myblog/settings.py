@@ -21,7 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "1_w9a3zqeuz=73)po)^bn&!*ms-^4s3_^dk92=g3#!nlg0+md^"
-
+GITHUB_CLIENT_ID="Ov23liHTJ9nawT0IG1Dc"
+GITHUB_CLIENT_SECRET="5fc34507d396658b8eee092e152939c455aac0da"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.github",
     "polling",
     "blogging",
 ]
@@ -137,3 +140,13 @@ STATIC_URL = "/static/"
 
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
+
+SOCIALACCOUNT_PROVIDERS = {
+    "github": {
+        "VERIFIED_EMAIL": True,
+        "APP": {
+            "client_id": GITHUB_CLIENT_ID,
+            "secret": GITHUB_CLIENT_SECRET
+        }
+    }
+}
