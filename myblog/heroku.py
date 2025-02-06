@@ -12,11 +12,11 @@ DATABASES = {
 
 DEBUG = False
 TEMPLATE_DEBUG = False
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 ALLOWED_HOSTS = ["*"]
 
 MIDDLEWARE = (
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     *MIDDLEWARE,
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 )
